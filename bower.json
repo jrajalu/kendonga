@@ -1,0 +1,30 @@
+{
+  "name": "WordPress_Theme_Workflow",
+  "version": "1.0.0",
+  "authors": [
+    "Jamaludin Rajalu <jrajalu@gmail.com>"
+  ],
+  "description": "WordPress_Theme_Workflow",
+  "main": "/",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "WordPress_Theme_Workflow"
+  ],
+  "license": "CC BY",
+  "homepage": "http://github.com/jrajalu",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexslider": "*",
+    "normalize.css": "~3.0.2",
+    "jquery": "~2.1.3",
+    "fontawesome": "~4.3.0"
+  }
+}
