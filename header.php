@@ -17,23 +17,21 @@
 <?php wp_head(); ?>
 </head>
 <body>
-<div class="wrap">
-<header class="section group header">
-<div class="col span_6_of_12">
+<div class="wrapper">
+<header class="wrap section group header">
+<div class="col span_12_of_12">
 <a href="<?php bloginfo( 'url' ); ?>">
 <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
 </a>
-</div>
-<div class="col span_6_of_12">
-  hello icon
 </div>
 </header>
 <nav class="wrap section group">
   <?php 
     wp_nav_menu(array(
-      'menu'          => 'Main Navigation', 
-      'container_id'  => 'cssmenu', 
-      'walker'        => new CSS_Menu_Maker_Walker()
+      'theme_location'  => 'primary',
+      'menu'            => 'Primary Navigation', 
+      'container_id'    => 'cssmenu', 
+      'walker'          => new CSS_Menu_Maker_Walker()
     )); 
   ?> 
 </nav>

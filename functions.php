@@ -4,6 +4,22 @@
  * @author Jamaludin Rajalu
  */
 
+/**
+ * Theme Update Checker
+ * @link http://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/
+ */
+
+require get_template_directory() . '/lib/theme-updates/theme-update-checker.php';
+  new ThemeUpdateChecker(
+    'kendonga-master',
+    'https://github.com/jrajalu/kendonga/blob/master/info.json'
+  );
+
+/**
+ * Theme Features & Support
+ * @link http://generatewp.com/theme-support/
+ */
+
 if ( ! function_exists('jrwtdw_theme_features') ) {
 
   function jrwtdw_theme_features()  {
@@ -14,8 +30,8 @@ if ( ! function_exists('jrwtdw_theme_features') ) {
 
     add_theme_support( 'custom-header', array(
       'default-image' => get_template_directory_uri() . '/img/logo-main.svg',
-      'width'         => 460,
-      'height'        => 70,
+      'width'         => 960,
+      'height'        => 100,
     ));
 
     add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
@@ -64,10 +80,19 @@ if ( ! function_exists( 'jrwtdw_theme_sidebar' ) ) {
   function jrwtdw_theme_sidebar() {
 
     register_sidebar( array(
-      'id'            => 'primary_sidebar',
-      'name'          => __( 'Primary', 'jrwtdw' ),
-      'description'   => __( 'Primary sidebar', 'jrwtdw' ),
-      'class'         => 'widget',
+      'id'            => 'sidebar_1',
+      'name'          => __( 'Frontpage: One Column', 'jrwtdw' ),
+      'description'   => __( 'Full width widget', 'jrwtdw' ),
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>',
+      'before_widget' => '<div class="section group"><div class="col span_12_of_12">',
+      'after_widget'  => '</div></div>',
+    ));
+
+    register_sidebar( array(
+      'id'            => 'sidebar_2',
+      'name'          => __( 'Page Sidebar', 'jrwtdw' ),
+      'description'   => __( 'Page Sidebar', 'jrwtdw' ),
       'before_title'  => '<h2>',
       'after_title'   => '</h2>',
       'before_widget' => '<div>',
@@ -75,16 +100,14 @@ if ( ! function_exists( 'jrwtdw_theme_sidebar' ) ) {
     ));
 
     register_sidebar( array(
-      'id'            => 'secondary_sidebar',
-      'name'          => __( 'Secondary', 'jrwtdw' ),
-      'description'   => __( 'Secondary', 'jrwtdw' ),
-      'class'         => 'widget',
-      'before_title'  => '<h2>',
+      'id'            => 'sidebar_3',
+      'name'          => __( 'Footer: Left', 'jrwtdw' ),
+      'description'   => __( 'Footer content', 'jrwtdw' ),
+      'before_title'  => '<h2 class="hide">',
       'after_title'   => '</h2>',
-      'before_widget' => '<div>',
+      'before_widget' => '<div class="left-footer">',
       'after_widget'  => '</div>',
     ));
-
   }
 
   add_action( 'widgets_init', 'jrwtdw_theme_sidebar' );
@@ -149,9 +172,9 @@ add_filter( 'wp_title', 'jrwtdw_wp_title', 10, 2 );
 function jrwtdw_login_logo() { ?>
   <style type="text/css">
     body.login div#login h1 a {
-      background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo-single.png);
-      -webkit-background-size: 200px;
-      background-size: 200px;
+      background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo-admin.svg);
+      -webkit-background-size: 320px;
+      background-size: 320px;
       background-position: center top;
       background-repeat: no-repeat;
       color: #999;
@@ -162,7 +185,7 @@ function jrwtdw_login_logo() { ?>
       margin: 0 auto 0;
       padding: 0;
       text-decoration: none;
-      width: 200px;
+      width: 320px;
       text-indent: -9999px;
       outline: 0;
       overflow: hidden;
