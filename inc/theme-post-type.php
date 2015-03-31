@@ -51,3 +51,24 @@ function jrwtdw_slideshow() {
 }
 
 add_action( 'init', 'jrwtdw_slideshow', 0 );
+
+// Custom Column Adjustment
+// @link http://codex.wordpress.org/Plugin_API/Action_Reference/manage_posts_custom_column
+add_action('manage_jrwtdw_slideshow_posts_custom_column', 'jrwtdw_jrwtdw_slideshow_custom_columns');
+add_filter('manage_edit-jrwtdw_slideshow_columns', 'jrwtdw_add_new_jrwtdw_slideshow_columns');
+function jrwtdw_add_new_jrwtdw_slideshow_columns( $columns ){
+  $columns = array(
+    'cb'                      => '<input type="checkbox">',
+    'jrwtdw_slideshow_image'  => __( 'Image', 'ukmtheme' ),
+    'title'                   => __( 'Title', 'ukmtheme' ),
+    'date'                    => __( 'Date', 'ukmtheme' )
+  );
+  return $columns;
+}
+function jrwtdw_jrwtdw_slideshow_custom_columns( $column ){
+  global $post;
+  
+  switch ($column) {
+    case 'jrwtdw_slideshow_image' : $url = get_post_meta(get_the_ID(),'_jrwtdw_slide_image',true); echo '<img src="'.$url.'" width="200">';break;
+  }
+}

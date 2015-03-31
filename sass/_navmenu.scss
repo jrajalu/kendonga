@@ -29,10 +29,10 @@
 }
 #cssmenu {
   width: auto;
-  background: #b5b5b5;
+  background: #39BFBF;
 }
 #cssmenu > ul {
-  background: url('images/bg.png');
+  //background: url('images/bg.png');
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05);
 }
 #cssmenu.align-right > ul > li {
@@ -58,7 +58,7 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 400;
-  color: #d3eced;
+  color: #ffffff;
 }
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover,
@@ -211,7 +211,7 @@
 }
 @media all and (max-width: 480px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 480px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 480px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 480px), only screen and (min-device-pixel-ratio: 2) and (max-width: 480px), only screen and (min-resolution: 192dpi) and (max-width: 480px), only screen and (min-resolution: 2dppx) and (max-width: 480px) {
   #cssmenu {
-    background: #b5b5b5;
+    background: #39BFBF;
   }
   #cssmenu > ul {
     display: none;
@@ -248,7 +248,7 @@
     padding: 18px 25px 18px 25px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: url('images/bg.png');
+    //background: url('images/bg.png');
     cursor: pointer;
     @include box-sizing(content-box);
   }

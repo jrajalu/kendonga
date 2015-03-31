@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         },
         {
           expand: true,
-          cwd: 'bower_components/fontawesome/fonts',
+          cwd: 'bower_components/font-awesome/fonts',
           src: '*',
           dest: 'fonts'
         },
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
     // grunt-css-url-rewrite
     cssUrlRewrite: {
       dist: {
-        src: 'bower_components/fontawesome/css/font-awesome.css',
+        src: 'bower_components/font-awesome/css/font-awesome.css',
         dest: 'css/font-awesome.css',
         options: {
           skipExternal: true,
@@ -135,6 +135,6 @@ module.exports = function(grunt) {
   
   grunt.registerTask('compile', ['copy', 'concat', 'cssUrlRewrite', 'compass', 'uglify', 'cssmin']);
 
-  grunt.registerTask('working', ['watch']);
+  grunt.registerTask('dev', ['watch']);
 
 };

@@ -5,6 +5,6 @@
  */
 get_header(); ?>
 
-<?php get_template_part( 'content', 'slide' ); ?>
+<?php get_template_part( 'content', 'slider' ); ?>
 
 <?php get_footer(); ?>

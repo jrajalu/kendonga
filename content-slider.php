@@ -24,7 +24,14 @@ $slide = new WP_Query( $args );
 
     <?php  endwhile; else: ?>
 
-      <img src="http://placehold.it/960x380" alt="">
+      <li>
+        <img src="http://placehold.it/960x400" alt="placehold.it">
+        <div class="flex-caption-wrap">
+          <p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, nam?</p>
+        </div>
+      </li>
+      <li><img src="http://placehold.it/960x400" alt="placehold.it"></li>
+      <li><img src="http://placehold.it/960x400" alt="placehold.it"></li>
 
     <?php endif; ?>
   </ul>
