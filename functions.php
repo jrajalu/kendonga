@@ -20,10 +20,6 @@ if ( ! function_exists('jrwtdw_theme_features') ) {
 
     add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
-    add_theme_support( 'title-tag' );
-
-    load_theme_textdomain( 'jrwtdw', get_template_directory() . '/lang' );
-
     register_nav_menus( array(
       'primary'   => __( 'Primary Navigation', 'jrwtdw' ),
       'secondary' => __( 'Secondary Navigation', 'jrwtdw' ),
