@@ -4,7 +4,7 @@
  * @author Jamaludin Rajalu
  */
 get_header(); ?>
-<div class="section group">
+<div class="wrap section group page">
   <div class="col span_8_of_12 article">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <h1><?php the_title(); ?></h1>

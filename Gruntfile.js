@@ -9,33 +9,33 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: 'bower_components/flexslider',
-          src: 'flexslider.css',
+          cwd: 'bower_components/owlcarousel/owl-carousel',
+          src: '*.css',
+          dest: 'img'
+        },
+        {
+          expand: true,
+          cwd: 'bower_components/owlcarousel/owl-carousel',
+          src: 'AjaxLoader.gif',
+          dest: 'img'
+        },
+        {
+          expand: true,
+          cwd: 'bower_components/owlcarousel/owl-carousel',
+          src: 'grabbing.png',
+          dest: 'img'
+        },
+        {
+          expand: true,
+          cwd: 'bower_components/uikit/css',
+          src: 'uikit.almost-flat.css',
           dest: 'css'
         },
         {
           expand: true,
-          cwd: 'bower_components/flexslider/fonts',
+          cwd: 'bower_components/uikit/fonts',
           src: '*',
-          dest: 'fonts'
-        },
-        {
-          expand: true,
-          cwd: 'bower_components/font-awesome/fonts',
-          src: '*',
-          dest: 'fonts'
-        },
-        {
-          expand: true,
-          cwd: 'bower_components/font-awesome/css',
-          src: 'font-awesome.css',
-          dest: 'css'   
-        },
-        {
-          expand: true,
-          cwd: 'bower_components/normalize.css',
-          src: 'normalize.css',
-          dest: 'css'
+          dest: 'fonts'   
         }]
       }
     },
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     // grunt-contrib-concat
     concat: {
       basic: {
-        src: ['bower_components/flexslider/jquery.flexslider.js'],
+        src: ['bower_components/uikit/js/uikit.js', 'bower_components/owlcarousel/owl-carousel/owl.carousel.js'],
         dest: 'js/library.all.js',
       }
     },
@@ -78,9 +78,31 @@ module.exports = function(grunt) {
     },
     // grunt-css-url-rewrite
     cssUrlRewrite: {
-      dist: {
-        src: 'css/font-awesome.css',
-        dest: 'css/font-awesome-url-rewrite.css',
+      uikit: {
+        src: 'css/uikit.almost-flat.css',
+        dest: 'css/uikit.almost-flat-rewrite.css',
+        options: {
+          skipExternal: true,
+          rewriteUrl: function(url, options, dataURI) {
+            var path = url.replace(options.baseDir, '');
+            return path;
+          }
+        }
+      },
+      owl_carousel: {
+        src: ['img/owl.carousel.css'],
+        dest: 'css/owl.carousel-rewrite.css',
+        options: {
+          skipExternal: true,
+          rewriteUrl: function(url, options, dataURI) {
+            var path = url.replace(options.baseDir, '');
+            return path;
+          }
+        }
+      },
+      owl_theme: {
+        src: ['img/owl.theme.css'],
+        dest: 'css/owl.theme-rewrite.css',
         options: {
           skipExternal: true,
           rewriteUrl: function(url, options, dataURI) {
@@ -99,7 +121,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'style.css': ['css/normalize.css', 'css/font-awesome-url-rewrite.css', 'css/flexslider.css', 'css/main.css']
+          'style.css': ['css/uikit.almost-flat-rewrite.css', 'css/owl.carousel-rewrite.css', 'css/owl.theme-rewrite.css', 'css/main.css']
         }
       }
     },
@@ -161,7 +183,7 @@ module.exports = function(grunt) {
 
   // execute grunt task
   
-  grunt.registerTask('compile', ['copy', 'concat', 'cssUrlRewrite', 'compass', 'uglify', 'cssmin','usebanner']);
+  grunt.registerTask('build', ['copy', 'concat', 'cssUrlRewrite', 'compass', 'uglify', 'cssmin', 'usebanner']);
 
   grunt.registerTask('dev', ['watch']);
 

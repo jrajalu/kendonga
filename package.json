@@ -1,7 +1,7 @@
 {
-  "name": "Kendong A Corporation",
+  "name": "Kendong_A",
   "version": "1.0.0",
-  "description": "Kendong A Corporation Sdn. Bhd. official website",
+  "description": "Kendong A Construction & Enterprise official website",
   "main": "/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

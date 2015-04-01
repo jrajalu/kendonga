@@ -132,7 +132,8 @@ if ( ! function_exists( 'jrwtdw_theme_scripts' ) ) {
     wp_enqueue_script( 'library', get_template_directory_uri(). '/js/library.all.min.js', array(), '1.0.0', true );
     wp_enqueue_script( 'theme', get_template_directory_uri(). '/js/scripts.min.js', array(), '1.0.0', true );
 
-    wp_enqueue_style( 'theme', get_stylesheet_uri(), '1.0.0' );
+    wp_enqueue_style( 'fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,600,400', flase, '1.0.0' );
+    wp_enqueue_style( 'theme', get_stylesheet_uri(), false, '1.0.0' );
 
   }
 
@@ -204,3 +205,23 @@ function jrwtdw_login_logo_url_title() {
   return get_bloginfo( 'name' );
 }
 add_filter( 'login_headertitle', 'jrwtdw_login_logo_url_title' );
+
+/**
+ * Search form
+ */
+
+function jrwtdw_search_form() {
+  $form = '
+  <form role="search" method="get" class="uk-form search-form" action="'. home_url( '/' ) .'">
+  <label>
+    <span class="screen-reader-text">'. _x( 'Search for:', 'label' ) .'</span>
+    <input type="search" class="search-field" placeholder="'. esc_attr_x( 'Search …', 'placeholder' ) .'" value="'. get_search_query() .'" name="s" title="'. esc_attr_x( 'Search for:', 'label' ) .'" />
+  </label>
+  <button type="submit" class="uk-button search-submit" >'. esc_attr_x( 'Search', 'submit button' ) .'</button>
+</form>';
+
+return $form;
+
+}
+
+add_filter( 'get_search_form', 'jrwtdw_search_form' );

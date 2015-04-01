@@ -11,28 +11,14 @@ $args = array(
 $slide = new WP_Query( $args );
 
 ?>
-<div class="flexslider">
-  <ul class="slides">
+<div id="owl-front" class="owl-carousel owl-theme">
     <?php if ( $slide->have_posts() ) : while ( $slide->have_posts() ) : $slide->the_post(); ?>
-
-    <li>
+    <div class="item">
       <img src="<?php echo get_post_meta( get_the_ID(), '_jrwtdw_slide_image', true ); ?>" alt="<?php the_title(); ?>">
-      <div class="flex-caption-wrap">
-      <p class="flex-caption"><?php the_title(); ?></p>
-      </div>
-    </li>
-
+    </div>         
     <?php  endwhile; else: ?>
-
-      <li>
-        <img src="http://placehold.it/960x400" alt="placehold.it">
-        <div class="flex-caption-wrap">
-          <p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, nam?</p>
-        </div>
-      </li>
-      <li><img src="http://placehold.it/960x400" alt="placehold.it"></li>
-      <li><img src="http://placehold.it/960x400" alt="placehold.it"></li>
-
+      <div class="item"><img src="http://placehold.it/960x400" alt="Placeholder 1"></div>
+      <div class="item"><img src="http://placehold.it/960x400" alt="Placeholder 2"></div>
+      <div class="item"><img src="http://placehold.it/960x400" alt="Placeholder 3"></div>
     <?php endif; ?>
-  </ul>
 </div>

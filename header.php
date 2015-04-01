@@ -19,10 +19,16 @@
 <body>
 <div class="wrapper">
 <header class="wrap section group header">
-<div class="col span_12_of_12">
-<a href="<?php bloginfo( 'url' ); ?>">
-<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-</a>
+<div class="col span_6_of_12">
+  <a href="<?php bloginfo( 'url' ); ?>">
+    <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+  </a>
+</div>
+<div class="col span_6_of_12">
+  <ul class="social-button">
+    <li><a href="#"><i class="uk-icon uk-icon-facebook-official"></i></a></li>
+    <li><a href="#"><i class="uk-icon uk-icon-instagram"></i></a></li>
+  </ul>
 </div>
 </header>
 <nav class="wrap section group">

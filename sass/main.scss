@@ -1,7 +1,6 @@
 @import "compass";
 @import "clearfix";
 @import "grid";
-@import "webfonts";
 @import "wordpress";
 @import "navmenu";
 @import "stickyfooter";
@@ -19,7 +18,7 @@ html {
 // Typography
 
 body {
-  font-family: 'Lato', Helvetica Neue, Tahoma, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #7A736E;
   line-height: normal;
 }
@@ -151,6 +150,7 @@ display: block;
 footer {
   background: #39BFBF;
   color: #fff;
+  font-size: 13px;
 }
 
 .footer-nav {
@@ -164,5 +164,42 @@ footer {
     color: #fff;
     padding: 10px 10px 10px 0;
     display: block;
+  }
+}
+
+// owl carousel
+
+#owl-front .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// social button
+
+.social-button {
+  list-style-type: none;
+  text-align: right;
+  padding-top: 30px;
+  li {
+    display: inline-table;
+    margin-left: 5px;
+  }
+  a {
+      display: table-cell;
+      width: 40px;
+      height: 40px;
+      background: #39BFBF;
+      @include border-radius(50%);
+      text-align: center;
+      vertical-align: middle;
+      color: #fff;
+      font-size: 20px;
+  }
+  a:hover {
+    color: #ccc;
+  }
+  a:visited {
+    color: #fff;
   }
 }
