@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Kedong A
+ * @package Kendong_A
  * @author Jamaludin Rajalu
  */
 

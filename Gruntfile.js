@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function(grunt) {
 
-  // Project configuration.
+  // Project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     // grunt-contrib-copy
@@ -24,6 +24,12 @@ module.exports = function(grunt) {
           cwd: 'bower_components/font-awesome/fonts',
           src: '*',
           dest: 'fonts'
+        },
+        {
+          expand: true,
+          cwd: 'bower_components/font-awesome/css',
+          src: 'font-awesome.css',
+          dest: 'css'   
         },
         {
           expand: true,
@@ -73,8 +79,8 @@ module.exports = function(grunt) {
     // grunt-css-url-rewrite
     cssUrlRewrite: {
       dist: {
-        src: 'bower_components/font-awesome/css/font-awesome.css',
-        dest: 'css/font-awesome.css',
+        src: 'css/font-awesome.css',
+        dest: 'css/font-awesome-url-rewrite.css',
         options: {
           skipExternal: true,
           rewriteUrl: function(url, options, dataURI) {
@@ -88,11 +94,30 @@ module.exports = function(grunt) {
     cssmin: {
       options: {
         shorthandCompacting: false,
-        roundingPrecision: -1
+        roundingPrecision: -1,
+        keepSpecialComments: 0
       },
       target: {
         files: {
-          'style.css': ['css/version.css', 'css/normalize.css','css/flexslider.css', 'css/font-awesome.css', 'css/main.css']
+          'style.css': ['css/normalize.css', 'css/font-awesome-url-rewrite.css', 'css/flexslider.css', 'css/main.css']
+        }
+      }
+    },
+    // grunt-banner
+    usebanner: {
+      taskName: {
+        options: {
+          position: 'top',
+          banner: '/*\n'+
+                  'Theme Name: <%= pkg.name %>\n'+
+                  'Version: <%= pkg.version %>\n'+
+                  'Description: <%= pkg.description %>\n'+
+                  'Author: <%= pkg.author %>\n'+
+                  '*/',
+          linebreak: true
+        },
+        files: {
+          src: [ 'style.css' ]
         }
       }
     },
@@ -107,7 +132,7 @@ module.exports = function(grunt) {
           'sass/*.scss',
           'css/*.css'
         ],
-        tasks: ['compass','cssmin'],
+        tasks: ['compass','cssmin','usebanner'],
           options: {
             livereload: true
           }
@@ -120,9 +145,12 @@ module.exports = function(grunt) {
           }
       }
     }
+    // end Project configuration
   });
 
   // load grunt task
+  
+  grunt.loadNpmTasks('grunt-banner');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -133,7 +161,7 @@ module.exports = function(grunt) {
 
   // execute grunt task
   
-  grunt.registerTask('compile', ['copy', 'concat', 'cssUrlRewrite', 'compass', 'uglify', 'cssmin']);
+  grunt.registerTask('compile', ['copy', 'concat', 'cssUrlRewrite', 'compass', 'uglify', 'cssmin','usebanner']);
 
   grunt.registerTask('dev', ['watch']);
 

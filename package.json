@@ -1,22 +1,23 @@
 {
-  "name": "WordPress_Theme_Workflow",
+  "name": "Kendong A Corporation",
   "version": "1.0.0",
-  "description": "WordPress_Theme_Workflow",
+  "description": "Kendong A Corporation Sdn. Bhd. official website",
   "main": "/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "WordPress_Theme_Workflow"
+    "url": "https://github.com/jrajalu/kendonga"
   },
   "keywords": [
-    "WordPress_Theme_Workflow"
+    "kendonga"
   ],
   "author": "Jamaludin Rajalu",
   "license": "CC BY",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-banner": "^0.3.1",
     "grunt-contrib-compass": "^1.0.1",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-copy": "^0.8.0",
