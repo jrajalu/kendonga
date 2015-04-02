@@ -45,6 +45,13 @@ $(document).ready(function() {
 
   });
 
+  // Rounded cliping image
+
+  var cw = $('.round_img').width();
+  $('.round-img').css({
+    'height': cw + 'px'
+  });
+
 });
 
 } )( jQuery );

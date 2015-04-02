@@ -16,6 +16,18 @@ require get_template_directory() . '/lib/theme-updates/theme-update-checker.php'
   );
 
 /**
+ * Admin Favicon
+ * Login Favicon
+ */
+function jrwtdw_add_favicon() {
+  $favicon_url = get_template_directory_uri() . '/favicon.ico';
+  echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
+}
+
+add_action( 'login_head', 'jrwtdw_add_favicon' );
+add_action( 'admin_head', 'jrwtdw_add_favicon' );
+
+/**
  * Theme Features & Support
  * @link http://generatewp.com/theme-support/
  */

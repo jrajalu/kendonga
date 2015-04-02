@@ -35,6 +35,7 @@ a:visited {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
   color: #39BFBF;
   font-weight: 300;
 }
@@ -62,7 +63,20 @@ body {
 
 .page {
   background: #fff;
-  padding: 0 0 20px 0;
+  padding: 20px 0 20px 0;
+}
+
+ol.article {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    padding: 10px 0;
+    h3 {
+      padding: 0;
+      margin: 0;
+    }
+  }
 }
 
 .hide {
@@ -171,4 +185,16 @@ footer {
   a:visited {
     color: #fff;
   }
+}
+
+// rounded image
+
+.round-img {
+  border: 2px solid #39BFBF;
+  border-radius: 50%;
+}
+
+// project
+.project-title {
+  padding-top: 40px;
 }

@@ -5,7 +5,7 @@
  */
 
 $args = array(
-  'post_type' => 'jrwtdw_slideshow',
+  'post_type' => 'slideshow',
 );
 $slide = new WP_Query( $args );
 
