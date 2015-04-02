@@ -8,6 +8,7 @@ $(document).ready(function() {
  
       autoPlay: 10000,
       navigation : true, // Show next and prev buttons
+      navigationText: ["<",">"],
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true

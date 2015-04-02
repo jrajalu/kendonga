@@ -771,10 +771,22 @@ footer {
   display: block;
 }
 
+.nav-wrap {
+  background: #39BFBF;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05);
+}
+
 #owl-front .item img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.owl-buttons {
+  position: absolute;
+  top: 2%;
+  width: 100%;
+  text-align: right;
 }
 
 .social-button {

@@ -17,8 +17,8 @@ $slide = new WP_Query( $args );
       <img src="<?php echo get_post_meta( get_the_ID(), '_jrwtdw_slide_image', true ); ?>" alt="<?php the_title(); ?>">
     </div>         
     <?php  endwhile; else: ?>
-      <div class="item"><img src="http://placehold.it/960x400" alt="Placeholder 1"></div>
-      <div class="item"><img src="http://placehold.it/960x400" alt="Placeholder 2"></div>
-      <div class="item"><img src="http://placehold.it/960x400" alt="Placeholder 3"></div>
+      <div class="item"><img src="http://placehold.it/1920x800" alt="Placeholder 1"></div>
+      <div class="item"><img src="http://placehold.it/1920x800" alt="Placeholder 2"></div>
+      <div class="item"><img src="http://placehold.it/1920x800" alt="Placeholder 3"></div>
     <?php endif; ?>
 </div>

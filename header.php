@@ -31,13 +31,15 @@
   </ul>
 </div>
 </header>
-<nav class="wrap section group">
-  <?php 
-    wp_nav_menu(array(
-      'theme_location'  => 'primary',
-      'menu'            => 'Primary Navigation', 
-      'container_id'    => 'cssmenu', 
-      'walker'          => new CSS_Menu_Maker_Walker()
-    )); 
-  ?> 
-</nav>
+<div class="nav-wrap">
+  <nav class="wrap group">
+    <?php 
+      wp_nav_menu(array(
+        'theme_location'  => 'primary',
+        'menu'            => 'Primary Navigation', 
+        'container_id'    => 'cssmenu', 
+        'walker'          => new CSS_Menu_Maker_Walker()
+      )); 
+    ?> 
+  </nav>
+</div>
