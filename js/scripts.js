@@ -8,9 +8,10 @@ $(document).ready(function() {
  
       autoPlay: 10000,
       navigation : true, // Show next and prev buttons
-      navigationText: ["<",">"],
+      navigationText: ["<i class='uk-icon uk-icon-angle-left'></i>","<i class='uk-icon uk-icon-angle-right'>"],
       slideSpeed : 300,
       paginationSpeed : 400,
+      pagination: false,
       singleItem:true
  
       // "singleItem:true" is a shortcut for:

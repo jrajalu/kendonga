@@ -6,7 +6,6 @@
 
 $args = array(
   'post_type' => 'jrwtdw_slideshow',
-  'orderby'   => 'menu_order'
 );
 $slide = new WP_Query( $args );
 

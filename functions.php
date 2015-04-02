@@ -12,7 +12,7 @@
 require get_template_directory() . '/lib/theme-updates/theme-update-checker.php';
   new ThemeUpdateChecker(
     'kendonga-master',
-    'https://github.com/jrajalu/kendonga/blob/master/info.json'
+    'https://raw.githubusercontent.com/jrajalu/kendonga/master/version.json'
   );
 
 /**
@@ -56,6 +56,7 @@ if ( ! function_exists('jrwtdw_theme_require') ) {
     require_once  get_template_directory() . '/inc/theme-metabox.php';
     require_once  get_template_directory() . '/inc/theme-navmenu.php';
     require_once  get_template_directory() . '/inc/theme-post-type.php';
+    require_once  get_template_directory() . '/inc/theme-options.php';
 
   }
 

@@ -26,8 +26,8 @@
 </div>
 <div class="col span_6_of_12">
   <ul class="social-button">
-    <li><a href="#"><i class="uk-icon uk-icon-facebook-official"></i></a></li>
-    <li><a href="#"><i class="uk-icon uk-icon-instagram"></i></a></li>
+    <li><a href="<?php echo get_option('jrwtdw_facebook'); ?>"><i class="uk-icon uk-icon-facebook-official"></i></a></li>
+    <li><a href="<?php echo get_option('jrwtdw_instagram'); ?>"><i class="uk-icon uk-icon-instagram"></i></a></li>
   </ul>
 </div>
 </header>
