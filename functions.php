@@ -108,7 +108,7 @@ if ( ! function_exists( 'jrwtdw_theme_sidebar' ) ) {
       'description'   => __( 'Page Sidebar', 'jrwtdw' ),
       'before_title'  => '<h2>',
       'after_title'   => '</h2>',
-      'before_widget' => '<div>',
+      'before_widget' => '<div class="page-sidebar">',
       'after_widget'  => '</div>',
     ));
 

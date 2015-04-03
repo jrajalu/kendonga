@@ -72,7 +72,7 @@ module.exports = function(grunt) {
         dest: 'js/library.all.min.js'
       },
       ukmtheme: {
-        src: 'js/scripts.js',
+        src: 'js/dev/scripts.js',
         dest: 'js/scripts.min.js'
       }
     },
@@ -165,7 +165,7 @@ module.exports = function(grunt) {
           }
       },
       js: {
-        files: ['js/scripts.js'],
+        files: ['js/dev/scripts.js'],
         tasks: ['uglify'],
           options: {
             spawn: false
