@@ -36,7 +36,7 @@ if ( ! function_exists('jrwtdw_theme_features') ) {
 
   function jrwtdw_theme_features()  {
 
-    add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+    add_theme_support( 'post-thumbnails', array( 'post', 'page', 'work' ) );
 
     set_post_thumbnail_size( 200, 200, true );
 

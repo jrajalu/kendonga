@@ -12,7 +12,7 @@ get_header(); ?>
     <?php while ( have_posts() ) : the_post(); ?>
       <li class="section group">
       <div class="col span_2_of_12">
-        <img class="round-img" src="<?php echo get_post_meta( get_the_ID(), '_jrwtdw_work_image', true ); ?>" alt="<?php the_title(); ?>">
+        <?php the_post_thumbnail( 'thumbnail', array('class' => 'circle-image') ); ?>
       </div>
       <div class="col span_10_of_12">
         <a href="<?php echo get_permalink(); ?>"><h2 class="project-title"><?php the_title(); ?></h2></a>

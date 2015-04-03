@@ -100,7 +100,7 @@ function jrwtdw_work_list() {
     'label'               => __( 'Work', 'jrwtdw' ),
     'description'         => __( 'Kendong A Construction works.', 'jrwtdw' ),
     'labels'              => $labels,
-    'supports'            => array( 'title', 'editor', 'revisions', ),
+    'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', ),
     'taxonomies'          => array( 'work' ),
     'hierarchical'        => false,
     'public'              => true,

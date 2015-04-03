@@ -143,7 +143,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
     // grunt-contrib-clean
     clean: {
       js: ['js/*.js', '!js/*.min.js'],

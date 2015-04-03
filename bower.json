@@ -1,16 +1,16 @@
 {
-  "name": "WordPress_Theme_Workflow",
-  "version": "1.0.0",
+  "name": "Kendong_A",
+  "version": "1.0.3",
   "authors": [
     "Jamaludin Rajalu <jrajalu@gmail.com>"
   ],
-  "description": "WordPress_Theme_Workflow",
+  "description": "Kendong_A",
   "main": "/",
   "moduleType": [
     "node"
   ],
   "keywords": [
-    "WordPress_Theme_Workflow"
+    "Kendong_A"
   ],
   "license": "CC BY",
   "homepage": "http://github.com/jrajalu",
