@@ -143,6 +143,12 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    // grunt-contrib-clean
+    clean: {
+      js: ['js/*.js', '!js/*.min.js'],
+      css: ['img/*.css', 'css/*.css', '!css/*.min.css']
+    },
     // grunt-contrib-watch
     watch: {
       configFiles: {
@@ -173,6 +179,7 @@ module.exports = function(grunt) {
   // load grunt task
   
   grunt.loadNpmTasks('grunt-banner');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -186,5 +193,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['copy', 'concat', 'cssUrlRewrite', 'compass', 'uglify', 'cssmin', 'usebanner']);
 
   grunt.registerTask('dev', ['watch']);
+
+  grunt.registerTask('final', ['clean']);
 
 };

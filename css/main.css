@@ -714,19 +714,22 @@ footer {
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 39%;
+  top: 50%;
 }
 
 .carousel-wrap .owl-theme .owl-controls .owl-buttons div {
   position: absolute;
   color: #fff;
   zoom: 1;
-  font-size: 52px;
+  width: 60px;
+  height: 60px;
+  display: block;
+  font-size: 48px;
   filter: Alpha(Opacity=50);
   opacity: .5;
   background: transparent;
   padding: 0 0 0 0;
-  margin: 0 0 0 0;
+  margin: -38px 0 0 0;
 }
 
 .carousel-wrap .owl-prev {
