@@ -121,7 +121,8 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'style.css': ['css/uikit.almost-flat-rewrite.css', 'css/owl.carousel-rewrite.css', 'css/owl.theme-rewrite.css', 'css/main.css']
+          'style.css': ['css/uikit.almost-flat-rewrite.css', 'css/owl.carousel-rewrite.css', 'css/owl.theme-rewrite.css', 'css/main.css'],
+          'css/admin.min.css': ['css/admin.css']
         }
       }
     },

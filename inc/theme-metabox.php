@@ -44,26 +44,31 @@ add_action( 'cmb2_init', 'jrwtdw_work_metaboxes' );
       ) );
 
       $cmb->add_field( array(
+          'name'    => 'Work',
+          'desc'    => 'e.g Interior Design & Built for Tan Sri Villa',
+          'id'      => $prefix . 'work_name',
+          'type'    => 'text',
+      ) );
+
+      $cmb->add_field( array(
+          'name'    => 'Location',
+          'desc'    => 'e.g Serai Saujana Villa',
+          'id'      => $prefix . 'work_location',
+          'type'    => 'text',
+      ) );
+
+      $cmb->add_field( array(
           'name'    => 'Date of Completion',
-          'desc'    => 'Enter date completion',
+          'desc'    => 'e.g 2015',
           'id'      => $prefix . 'work_date',
           'type'    => 'text',
       ) );
 
       $cmb->add_field( array(
           'name'    => 'Value',
-          'desc'    => 'Enter projek value in MYR.',
+          'desc'    => 'e.g MYR 550,000.00',
           'id'      => $prefix . 'work_value',
           'type'    => 'text',
-      ) );
-      $cmb->add_field( array(
-          'name'    => 'Project Image',
-          'desc'    => 'Upload an image or enter an URL.',
-          'id'      => $prefix . 'work_image',
-          'type'    => 'file',
-          'options' => array(
-              'url' => false,
-          ),
       ) );
 
   }

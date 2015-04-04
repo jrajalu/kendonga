@@ -11,8 +11,14 @@ get_header(); ?>
     <ol class="col span_12_of_12 article">
     <?php while ( have_posts() ) : the_post(); ?>
       <li>
-        <a href="<?php echo get_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-        <span>Date of Completion: <?php echo get_post_meta( get_the_ID(), '_jrwtdw_work_date', true ); ?></span>&nbsp;|&nbsp;<span>Value: MYR <?php echo get_post_meta( get_the_ID(), '_jrwtdw_work_value', true ); ?></span>
+        <?php
+          $work_name      = get_post_meta( get_the_ID(), '_jrwtdw_work_name', true );
+          $work_location  = get_post_meta( get_the_ID(), '_jrwtdw_work_location', true );
+          $work_value     = get_post_meta( get_the_ID(), '_jrwtdw_work_value', true );
+          $work_date      = get_post_meta( get_the_ID(), '_jrwtdw_work_date', true );
+        ?>
+        <a href="<?php echo get_permalink(); ?>"><h3><?php echo $work_name;  ?>&nbsp;-&nbsp;<?php echo $work_location;  ?></h3></a>
+        <span>Date of Completion: <?php echo $work_date; ?></span>&nbsp;|&nbsp;<span>Value: MYR <?php echo $work_value; ?></span>
       </li>
     <?php endwhile; ?>
     </ol>
