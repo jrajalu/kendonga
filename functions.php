@@ -98,7 +98,7 @@ if ( ! function_exists( 'jrwtdw_theme_sidebar' ) ) {
       'description'   => __( 'Full width widget', 'jrwtdw' ),
       'before_title'  => '<h2>',
       'after_title'   => '</h2>',
-      'before_widget' => '<div class="section group"><div class="col span_12_of_12">',
+      'before_widget' => '<div class="section group"><div class="col span_12_of_12 frontpage-widget">',
       'after_widget'  => '</div></div>',
     ));
 
