@@ -196,9 +196,40 @@ footer {
   border: 3px solid #39BFBF;
   background: #6DE4E4;
   border-radius: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
 // project
 .project-title {
   padding-top: 40px;
+}
+
+.gallery-wrap {
+  @include box-sizing(border-box);
+  padding-top: 30px;
+  .gallery-grid {
+    width: 32%;
+    height: 300px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    .project-title {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen
+and (min-width : 320px)
+and (max-width : 640px) {
+
+  body {
+    padding: 0 10px 0;
+  }
+
+  .gallery-grid {
+    width: 100% !important;
+  }
+
 }

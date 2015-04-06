@@ -157,8 +157,7 @@ module.exports = function(grunt) {
       css: {
         files: [
           'sass/main.scss',
-          'sass/*.scss',
-          'css/*.css'
+          'sass/*.scss'
         ],
         tasks: ['compass','cssmin','usebanner'],
           options: {
