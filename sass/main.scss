@@ -210,7 +210,7 @@ footer {
   padding-top: 30px;
   .gallery-grid {
     width: 32%;
-    height: 300px;
+    height: 230px;
     float: left;
     margin-right: 10px;
     margin-bottom: 20px;
@@ -230,6 +230,21 @@ and (max-width : 640px) {
 
   .gallery-grid {
     width: 100% !important;
+  }
+
+  .social-button {
+    display: table;
+    margin: 0 auto;
+    li {
+      margin: 0 5px 10px;
+    }
+  }
+  footer {
+    padding: 0 10px;
+  }
+  .footer-nav {
+    display: table;
+    margin: 0 auto;
   }
 
 }

@@ -17,7 +17,7 @@ get_header(); ?>
           $work_value     = get_post_meta( get_the_ID(), '_jrwtdw_work_value', true );
           $work_date      = get_post_meta( get_the_ID(), '_jrwtdw_work_date', true );
         ?>
-        <a href="<?php echo get_permalink(); ?>"><h3><?php echo $work_name;  ?>&nbsp;-&nbsp;<?php echo $work_location;  ?></h3></a>
+        <h3><?php echo $work_name;  ?>&nbsp;-&nbsp;<?php echo $work_location;  ?></h3>
         <span>Date of Completion: <?php echo $work_date; ?></span>&nbsp;|&nbsp;<span>Value: MYR <?php echo $work_value; ?></span>
       </li>
     <?php endwhile; ?>

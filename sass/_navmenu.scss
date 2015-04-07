@@ -285,6 +285,8 @@
   #cssmenu ul ul li:first-child > a,
   #cssmenu ul ul li:last-child > a {
     border-radius: 0;
+    background: #00B6B6;
+    color: #fff;
   }
   #cssmenu #menu-button::after {
     display: block;
