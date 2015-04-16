@@ -53,7 +53,12 @@ module.exports = function(grunt) {
     // grunt-contrib-concat
     concat: {
       basic: {
-        src: ['bower_components/uikit/js/uikit.js', 'bower_components/owlcarousel/owl-carousel/owl.carousel.js'],
+        src: 
+          [
+            'bower_components/uikit/js/uikit.js',
+            'bower_components/owlcarousel/owl-carousel/owl.carousel.js',
+            'bower_components/magnific-popup/dist/jquery.magnific-popup.js'
+          ],
         dest: 'js/library.all.js',
       }
     },
@@ -121,7 +126,14 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'style.css': ['css/uikit.almost-flat-rewrite.css', 'css/owl.carousel-rewrite.css', 'css/owl.theme-rewrite.css', 'css/main.css'],
+          'style.css':
+            [
+              'css/uikit.almost-flat-rewrite.css',
+              'css/owl.carousel-rewrite.css',
+              'css/owl.theme-rewrite.css',
+              'bower_components/magnific-popup/dist/magnific-popup.css',
+              'css/main.css'
+            ],
           'css/admin.min.css': ['css/admin.css']
         }
       }
