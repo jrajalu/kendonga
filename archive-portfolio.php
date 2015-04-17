@@ -6,7 +6,7 @@
 
 get_header(); ?>
 <div class="wrap page">
-  <h1><?php single_cat_title(); ?></h1>
+  <h1><?php post_type_archive_title(); ?></h1>
   <div class="section group">
     <div class="gallery-wrap article">
     <?php while ( have_posts() ) : the_post(); ?>

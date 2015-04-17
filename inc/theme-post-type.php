@@ -16,7 +16,7 @@ function jrwtdw_slideshow() {
     'menu_name'           => __( 'Slideshow', 'jrwtdw' ),
     'name_admin_bar'      => __( 'Slide', 'jrwtdw' ),
     'parent_item_colon'   => __( 'Parent Item:', 'jrwtdw' ),
-    'all_items'           => __( 'All Slides', 'jrwtdw' ),
+    'all_items'           => __( 'Manage', 'jrwtdw' ),
     'add_new_item'        => __( 'Add New Slide', 'jrwtdw' ),
     'add_new'             => __( 'Add New', 'jrwtdw' ),
     'new_item'            => __( 'New Slide', 'jrwtdw' ),
@@ -54,22 +54,22 @@ add_action( 'init', 'jrwtdw_slideshow', 0 );
 
 // Custom Column Adjustment
 // @link http://codex.wordpress.org/Plugin_API/Action_Reference/manage_posts_custom_column
-add_action('manage_jrwtdw_slideshow_posts_custom_column', 'jrwtdw_jrwtdw_slideshow_custom_columns');
-add_filter('manage_edit-jrwtdw_slideshow_columns', 'jrwtdw_add_new_jrwtdw_slideshow_columns');
-function jrwtdw_add_new_jrwtdw_slideshow_columns( $columns ){
+add_action('manage_slideshow_posts_custom_column', 'jrwtdw_slideshow_custom_columns');
+add_filter('manage_edit-slideshow_columns', 'jrwtdw_add_new_slideshow_columns');
+function jrwtdw_add_new_slideshow_columns( $columns ){
   $columns = array(
-    'cb'                      => '<input type="checkbox">',
-    'jrwtdw_slideshow_image'  => __( 'Image', 'ukmtheme' ),
-    'title'                   => __( 'Title', 'ukmtheme' ),
-    'date'                    => __( 'Date', 'ukmtheme' )
+    'cb'              => '<input type="checkbox">',
+    'slideshow_image' => __( 'Image', 'jrwtdw' ),
+    'title'           => __( 'Title', 'jrwtdw' ),
+    'date'            => __( 'Date', 'jrwtdw' )
   );
   return $columns;
 }
-function jrwtdw_jrwtdw_slideshow_custom_columns( $column ){
+function jrwtdw_slideshow_custom_columns( $column ){
   global $post;
   
   switch ($column) {
-    case 'jrwtdw_slideshow_image' : $url = get_post_meta(get_the_ID(),'_jrwtdw_slide_image',true); echo '<img src="'.$url.'" width="200">';break;
+    case 'slideshow_image' : $url = get_post_meta(get_the_ID(),'_jrwtdw_slide_image',true); echo '<img src="'.$url.'" width="200">';break;
   }
 }
 
@@ -84,7 +84,7 @@ function jrwtdw_portfolio_list() {
     'menu_name'           => __( 'Portfolio', 'jrwtdw' ),
     'name_admin_bar'      => __( 'Portfolio', 'jrwtdw' ),
     'parent_item_colon'   => __( 'Parent portfolio:', 'jrwtdw' ),
-    'all_items'           => __( 'All portfolios', 'jrwtdw' ),
+    'all_items'           => __( 'Manage', 'jrwtdw' ),
     'add_new_item'        => __( 'Add New portfolio', 'jrwtdw' ),
     'add_new'             => __( 'Add New', 'jrwtdw' ),
     'new_item'            => __( 'New portfolio', 'jrwtdw' ),
@@ -119,3 +119,24 @@ function jrwtdw_portfolio_list() {
 }
 
 add_action( 'init', 'jrwtdw_portfolio_list', 0 );
+
+// Custom Column Adjustment
+// @link http://codex.wordpress.org/Plugin_API/Action_Reference/manage_posts_custom_column
+add_action('manage_portfolio_posts_custom_column', 'jrwtdw_portfolio_custom_columns');
+add_filter('manage_edit-portfolio_columns', 'jrwtdw_add_new_portfolio_columns');
+function jrwtdw_add_new_portfolio_columns( $columns ){
+  $columns = array(
+    'cb'               => '<input type="checkbox">',
+    'portfolio_image'  => __( 'Cover', 'jrwtdw' ),
+    'title'            => __( 'Title', 'jrwtdw' ),
+    'date'             => __( 'Date', 'jrwtdw' )
+  );
+  return $columns;
+}
+function jrwtdw_portfolio_custom_columns( $column ){
+  global $post;
+  
+  switch ($column) {
+    case 'portfolio_image' : echo get_the_post_thumbnail( $post_id, array( 60, 60) ); break;
+  }
+}

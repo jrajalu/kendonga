@@ -245,7 +245,7 @@ add_filter( 'get_search_form', 'jrwtdw_search_form' );
 add_action('admin_head-nav-menus.php', 'wpclean_add_metabox_menu_posttype_archive');
 
 function wpclean_add_metabox_menu_posttype_archive() {
-add_meta_box('wpclean-metabox-nav-menu-posttype', 'Custom Post Type Archives', 'wpclean_metabox_menu_posttype_archive', 'nav-menus', 'side', 'default');
+add_meta_box('wpclean-metabox-nav-menu-posttype', 'Archives Links', 'wpclean_metabox_menu_posttype_archive', 'nav-menus', 'side', 'default');
 }
 
 function wpclean_metabox_menu_posttype_archive() {
@@ -297,13 +297,7 @@ endif;
 
 // portfolio gallery
 
-/**
- * Sample template tag function for outputting a cmb2 file_list
- *
- * @param  string  $file_list_meta_key The field meta key. ($prefix . 'file_list')
- * @param  string  $img_size           Size of image to show
- */
-function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
+function jrwtdw_portfolio_gallery( $file_list_meta_key, $img_size = 'medium' ) {
 
     // Get the list of files
     $files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
@@ -311,9 +305,15 @@ function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
     echo '<div class="portfolio">';
     // Loop through them and output an image
     foreach ( (array) $files as $attachment_id => $attachment_url ) {
-        echo '<a href="'. wp_get_attachment_link( 'thumbnail', false ) .'">';
-        echo wp_get_attachment_image( $attachment_id, $img_size );
-        echo '</a>';
+      echo '<a href="'. wp_get_attachment_url( $attachment_id ) .'">';
+      echo wp_get_attachment_image( $attachment_id, $img_size );
+      echo '</a>';
     }
     echo '</div>';
 }
+
+function ukmtheme_add_title_to_attachment( $markup, $id ){
+  $att = get_post( $id );
+  return str_replace( '<a ', '<a title="'.$att->post_title.'" ', $markup );
+}
+add_filter( 'wp_get_attachment_link', 'ukmtheme_add_title_to_attachment', 10, 5 );
